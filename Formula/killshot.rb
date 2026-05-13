@@ -10,16 +10,16 @@ class Killshot < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Killshot-AI-Tool/killshot/releases/download/v0.1.0/killshot_0.1.0_darwin_amd64.tar.gz"
-      sha256 "35c2a877e06b9e6cfdfa0028602c48dda061f3be6212e6b388c1d647f69459a4"
+      url "https://dl.killshot.io/0.1.0/killshot_0.1.0_darwin_amd64.tar.gz"
+      sha256 "d89bd20cbcbef32227cc4c9f5d635b47762491604d03c3db46c96a9e27fe6737"
 
       define_method(:install) do
         bin.install "killshot"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Killshot-AI-Tool/killshot/releases/download/v0.1.0/killshot_0.1.0_darwin_arm64.tar.gz"
-      sha256 "ae4415c3292b3bd5040fe0f7b51916e1a7a2bb1d03d433ddd2f50301868f0f7d"
+      url "https://dl.killshot.io/0.1.0/killshot_0.1.0_darwin_arm64.tar.gz"
+      sha256 "8111aa14a98bf791c4f1acbc1e0c19cae7d6a04c058789769c9749c09971e7d9"
 
       define_method(:install) do
         bin.install "killshot"
@@ -29,15 +29,15 @@ class Killshot < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Killshot-AI-Tool/killshot/releases/download/v0.1.0/killshot_0.1.0_linux_amd64.tar.gz"
-      sha256 "1d85e5400b05fbcd0863880b195fd22815e400a50d14136ff859d77a87eea2f8"
+      url "https://dl.killshot.io/0.1.0/killshot_0.1.0_linux_amd64.tar.gz"
+      sha256 "038fa9cfb2da5dc4db3e395db025a2abcfa9d7bc555b18ae21b2eb54622ddf82"
       define_method(:install) do
         bin.install "killshot"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Killshot-AI-Tool/killshot/releases/download/v0.1.0/killshot_0.1.0_linux_arm64.tar.gz"
-      sha256 "c67567e96d8640cbbe94b4a34354537ed40823be8ede78917af7bac4d464db00"
+      url "https://dl.killshot.io/0.1.0/killshot_0.1.0_linux_arm64.tar.gz"
+      sha256 "79459b35330d8ba7fe30c43ba3eea3897824cbdec998af0969892796836da809"
       define_method(:install) do
         bin.install "killshot"
       end
