@@ -5,21 +5,21 @@
 class Killshot < Formula
   desc "Killshot CLI — code analysis"
   homepage "https://killshot.io"
-  version "0.1.0"
+  version "0.1.1"
   license "PROPRIETARY"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://dl.killshot.io/0.1.0/killshot_0.1.0_darwin_amd64.tar.gz"
-      sha256 "d89bd20cbcbef32227cc4c9f5d635b47762491604d03c3db46c96a9e27fe6737"
+      url "https://dl.killshot.io/0.1.1/killshot_0.1.1_darwin_amd64.tar.gz"
+      sha256 "cc2e174061d3964a45b7ad215bcb61b9a8cb4225c855244028a2c4e168cb9ee5"
 
       define_method(:install) do
         bin.install "killshot"
       end
     end
     if Hardware::CPU.arm?
-      url "https://dl.killshot.io/0.1.0/killshot_0.1.0_darwin_arm64.tar.gz"
-      sha256 "8111aa14a98bf791c4f1acbc1e0c19cae7d6a04c058789769c9749c09971e7d9"
+      url "https://dl.killshot.io/0.1.1/killshot_0.1.1_darwin_arm64.tar.gz"
+      sha256 "a6df2a5b4de600707f2a19ca81cde544b715d72ed7a0d6b6c5bb1e12f74b4a74"
 
       define_method(:install) do
         bin.install "killshot"
@@ -29,15 +29,15 @@ class Killshot < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://dl.killshot.io/0.1.0/killshot_0.1.0_linux_amd64.tar.gz"
-      sha256 "038fa9cfb2da5dc4db3e395db025a2abcfa9d7bc555b18ae21b2eb54622ddf82"
+      url "https://dl.killshot.io/0.1.1/killshot_0.1.1_linux_amd64.tar.gz"
+      sha256 "c61ae58e78f6db9e9f2f54ef21424a88519a8c5dcef938978cd18a8178c62138"
       define_method(:install) do
         bin.install "killshot"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://dl.killshot.io/0.1.0/killshot_0.1.0_linux_arm64.tar.gz"
-      sha256 "79459b35330d8ba7fe30c43ba3eea3897824cbdec998af0969892796836da809"
+      url "https://dl.killshot.io/0.1.1/killshot_0.1.1_linux_arm64.tar.gz"
+      sha256 "7ff539e421af858d299f1350cdc000f1fcb22f6c6e108161a174f780119fe663"
       define_method(:install) do
         bin.install "killshot"
       end
@@ -45,6 +45,6 @@ class Killshot < Formula
   end
 
   test do
-    system "#{bin}/killshot", "version"
+    assert_match version.to_s, shell_output("#{bin}/killshot version")
   end
 end
