@@ -5,21 +5,21 @@
 class Killshot < Formula
   desc "Killshot CLI — code analysis"
   homepage "https://killshot.io"
-  version "0.2.1"
+  version "0.2.2"
   license "PROPRIETARY"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://dl.killshot.io/0.2.1/killshot_0.2.1_darwin_amd64.tar.gz"
-      sha256 "ea73425c5de542326c1da0f001963cd4136bc7136179d14c0b37ce3212fc9ae1"
+      url "https://dl.killshot.io/0.2.2/killshot_0.2.2_darwin_amd64.tar.gz"
+      sha256 "f7f2fbffbfb61d6fa6700bde3e23442310542adab39b9e92e110da721e58c17a"
 
       define_method(:install) do
         bin.install "killshot"
       end
     end
     if Hardware::CPU.arm?
-      url "https://dl.killshot.io/0.2.1/killshot_0.2.1_darwin_arm64.tar.gz"
-      sha256 "fe1f8632808de25423c7bec080d913fe38a7debf01b31f68a742b97e5a43cd4a"
+      url "https://dl.killshot.io/0.2.2/killshot_0.2.2_darwin_arm64.tar.gz"
+      sha256 "ce47cc4cf09d87f838ee7cccd0bf4e7469bb06ee8453c3789e4f250e2bd0000a"
 
       define_method(:install) do
         bin.install "killshot"
@@ -29,15 +29,15 @@ class Killshot < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://dl.killshot.io/0.2.1/killshot_0.2.1_linux_amd64.tar.gz"
-      sha256 "86bb55c3d1e4d44c0b664a2067362b54ab3c9649fb063496b6592183bfd223a3"
+      url "https://dl.killshot.io/0.2.2/killshot_0.2.2_linux_amd64.tar.gz"
+      sha256 "f063a6ba3beaef702b8f1190a9a1e81f01a678b8590a5a5cc7a65e7307accb61"
       define_method(:install) do
         bin.install "killshot"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://dl.killshot.io/0.2.1/killshot_0.2.1_linux_arm64.tar.gz"
-      sha256 "eb354df459f76b466c9b0d194e777beaeb37cf4c19f8465ff8410297b116820f"
+      url "https://dl.killshot.io/0.2.2/killshot_0.2.2_linux_arm64.tar.gz"
+      sha256 "c6ee7447b8525fbc00b3f74861ffa20772c5e9571d732a960c5e29e87e816b30"
       define_method(:install) do
         bin.install "killshot"
       end
